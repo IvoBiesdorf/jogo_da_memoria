@@ -1,5 +1,7 @@
 # jogo_da_memoria
 #Para o banco de dados MySQL criar um banco de dados chamado jogo_memoria e importar os scripts abaixo que devem estar dentro de um arquivo chamado jogos.sql
+
+
 -- phpMyAdmin SQL Dump
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
