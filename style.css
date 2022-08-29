@@ -1,0 +1,381 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+nav{
+    display: flex;
+    height: 35px;
+    width: 100%;
+    background-color: #999;
+    font-family: 'Amatic SC', cursive;
+}
+.nav-item{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 10px;
+    border-right: 3px solid #FFF;
+    color: white;
+    font-size: 1.2rem;
+}
+main{
+    display: flex;
+}
+aside{
+    width: 200px;
+    height: calc(100vh - 35px);
+    background-color: aliceblue;
+}
+.estatitsticas{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100px;
+}
+.ranking, .ranking2{
+    visibility: hidden;
+    width: 100%;
+    height: calc(100vh - 135px);
+}
+.principal{
+    width: calc(100% - 200px);
+    height: calc(100vh - 35px);
+    background-color: rgba(0, 0, 0, .3);
+}
+.pontuacao, .tempo{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    width: 100%;
+    height: 50%;
+    font-size: 1.4rem;
+    order: 0;
+}
+.label-pontos{
+    margin-right: 6px;
+}
+.btn{
+    width: 90%;
+    height: calc(45% - 10px);
+    font-size: 1.2rem;
+    margin: 5px auto;
+    order: 1;
+    cursor: pointer;
+}
+
+.dados-jogo{
+    width: 200px;
+    padding: 10px;
+}
+.corpo-jogo {
+    width: 960px;
+    max-width: calc((100vh - 80px)*1.25);
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.carta{
+    height: calc((100vh - 80px) / 4);
+    width: calc((100% - 60px)/ 6);
+    max-width: calc(((100vh - 80px) / 4)*0.75);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    border-radius: 5px;
+    cursor: pointer;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .9s;
+}
+
+.carta:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.carta-frente,
+.carta-atras {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    object-fit: contain;
+    position: absolute;
+    border-radius: 5px;
+    overflow: hidden;
+    backface-visibility: hidden;
+}
+.carta-atras{
+    background: rgb(95, 95, 99);
+}
+.carta-frente {
+    transform: rotateY(180deg);
+    background: #FFF;
+}
+
+.carta.virar {
+    transform: rotateY(180deg);
+    border: none;
+}
+
+
+/**************************** modal ***********************************************/
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    padding-top: 40px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.6);
+    
+  }
+  
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 95%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 10px;
+  }
+  .titulo-modal{
+    height: 35px;
+    font-size: 1.8rem;
+    padding: 10px 0 15px 10px;
+  }
+.img-modal{
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+.descricao{
+    padding: 8px;
+}
+
+  @-webkit-keyframes animatetop {
+      from{
+          transform: scale(0);
+      }
+      to{
+        transform: scale(1);
+      }
+  }
+  
+  @keyframes animatetop {
+    from{
+        transform: scale(0);
+    }
+    to{
+      transform: scale(1);
+    }
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #F00;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: black;
+    margin-right: 12px;
+    font-size: 45px;
+}
+.modal-body {
+    padding: 2px 16px;
+}
+.pontos-modal, .tempo-modal{
+    font-size: 1.3rem;
+    padding: 15px 7px 3px 7px;
+}
+.salvar-pontuacao{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.salvar-pontuacao label{
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+.input-nome{
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid #CCC;
+}
+.input-nome:active, .input-nome:focus{
+    outline: none;
+}
+#btn_salvar_pontuacao{
+    width: 150px;
+    padding: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#corpo .linha{
+    display: flex;
+    height: 35px;
+    border-bottom: 1px solid #CCC;
+}
+#corpo .linha div{
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    font-size: 1rem;
+}
+#corpo .indice{
+    width: 5%;
+    height: 100%;
+    justify-content: center;
+    font-size: 1rem;
+}
+#corpo .nome{
+    width: 55%;
+    height: 100%;
+    font-size: 1rem;
+}
+#corpo .pontos, #corpo .tempo{
+    width: 20%;
+    height: 100%;
+    font-size: 1rem;
+}
+.strong{
+    font-weight: 700;
+}
+@media only screen and (max-width: 768px){
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+    aside{
+        position: relative;
+        width: 100%;
+        height: 100px;
+        background-color: aliceblue;
+    }
+    .estatitsticas{
+        width: 100%;
+        height: 100%;
+        border: 1px solid;
+    }
+    .ranking, .ranking2{
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: calc(100vh - 35px);
+        border: 1px solid;
+        background-color: rgb(255, 255, 255);
+        z-index: 1;
+        width: 100%;
+        max-width: 350px;
+        transition: transform 0.6s ease-out;
+        padding: 30px 12px;
+    }
+    .ranking2{
+        transform: translateX(0);
+    }
+    .ranking{
+        transform: translateX(-350px);
+    }
+    .principal{
+        width: 100%;
+        height: calc(100vh - 135px);
+        background-color: #BBB;
+    }
+    .pontuacao, .tempo{
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        width: 60%;
+        height: 50%;
+        font-size: 1.4rem;
+        order: 0;
+    }
+    .btn{
+        width: calc(40% - 10px);
+        height: calc(50% - 10px);
+        margin: 5px;
+        font-size: 1.2rem;
+        order: 0;
+    }
+    .corpo-jogo {
+        width: 100%;
+    }
+    .principal{
+        flex-direction: column;
+    }
+    .carta{
+        height: calc((100vh - 200px) / 6);
+        width: calc((100% - 20px)/ 4);
+        margin: 2px;
+        transform: scale(1);
+        transform-style: preserve-3d;
+        transition: transform .9s;
+    }
+    .dados-jogo{
+        width: 100%;
+        height: 200px;
+        padding: 10px;
+    }
+    #ranking .linha{
+        display: flex;
+        height: 35px;
+        border-bottom: 1px solid #CCC;
+    }
+    #ranking .linha div{
+        display: flex;
+        align-items: center;
+        padding-top: 5px;
+        font-size: 1rem;
+    }
+    #ranking .indice{
+        width: 8%;
+        height: 100%;
+        justify-content: center;
+        font-size: 1rem;
+    }
+    #ranking .nome{
+        width: 44%;
+        height: 100%;
+        font-size: 1rem;
+    }
+    #ranking .pontos, #ranking .tempo{
+        width: 24%;
+        height: 100%;
+        font-size: 1rem;
+    }
+    .close2:hover, .close2:focus {
+      color: #F00;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .close2 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: black;
+        margin-right: 12px;
+        font-size: 45px;
+    }
+}

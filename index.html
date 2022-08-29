@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic&display=swap" rel="stylesheet">
+    <title>Jogo da memória</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-item">Nathivos</div>
+        <div class="nav-item">Jogo da memória</div>
+    </nav>
+    <main>
+        <aside>
+            <div class="estatitsticas">
+                <div class="pontuacao">
+                    <div class="label-pontos">Pontos: </div>
+                    <div class="pontos">1000</div>
+                </div>
+                <button class="btn" id="btn_reiniciar">Novo jogo</button>
+                <div class="tempo"></div>
+                <button class="btn" id="estatisticas">Estatítsticas</button>
+            </div>
+            <div id="ranking" class="ranking">
+                <div class="close2">&times;</div>
+                <div class="titulo-modal">Estatísticas do jogo</div>
+                <div class="estatistic"></div>
+            </div>
+        </aside>
+        <div class="principal">
+            <div class="corpo-jogo">
+                <div class=carta data-card="bob">
+                    <img src="./img/bob.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="bob">
+                    <img src="./img/bob.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="mario">
+                    <img src="./img/mario.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="mario">
+                    <img src="./img/mario.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="Homer-Simpson">
+                    <img src="./img/Homer-Simpson.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="Homer-Simpson">
+                    <img src="./img/Homer-Simpson.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="fred-flintston">
+                    <img src="./img/fred-flintston.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="fred-flintston">
+                    <img src="./img/fred-flintston.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="Mickey-Mouse">
+                    <img src="./img/Mickey-Mouse.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="Mickey-Mouse">
+                    <img src="./img/Mickey-Mouse.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="tom-e-Jerry">
+                    <img src="./img/tom-e-Jerry.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="tom-e-Jerry">
+                    <img src="./img/tom-e-Jerry.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="popeye">
+                    <img src="./img/picapau.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="popeye">
+                    <img src="./img/picapau.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="pernalonga">
+                    <img src="./img/pernalonga.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="pernalonga">
+                    <img src="./img/pernalonga.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="kiko">
+                    <img src="./img/kiko.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="kiko">
+                    <img src="./img/kiko.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="homer">
+                    <img src="./img/homer.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="homer">
+                    <img src="./img/homer.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="Salsicha">
+                    <img src="./img/Salsicha-e-Scooby-doo.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="Salsicha">
+                    <img src="./img/Salsicha-e-Scooby-doo.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="daffy">
+                    <img src="./img/Daffy-Duck.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+                <div class="carta" data-card="daffy">
+                    <img src="./img/Daffy-Duck.png" alt="Frente" class="carta-frente">
+                    <img src="./img/box.png" alt="Verso" class="carta-atras">
+                </div>
+            </div>
+        </div>
+    </main>
+        <!-- Modal -->
+    <div id="modalFimJogo" class="modal">
+        <div class="modal-content">
+            <div class="close">&times;</div>
+            <div class="titulo-modal"></div> 
+            <div class="pontos-modal"></div>
+            <div class="tempo-modal"></div>
+            <div class="salvar-pontuacao">
+                <label for="input-nome"></label>
+                <input type="text" class="input-nome" maxlength="50" placeholder="Seu nome ou apelido" autofocus>
+                <button type="button"  id="btn_salvar_pontuacao">Salvar pontuação</button>
+            </div>
+        </div>
+    </div>
+    <div id="modalEstatisticas" class="modal">
+        <div class="modal-content">
+            <div class="close">&times;</div>
+            <div class="titulo-modal">Estatísticas do jogo</div> 
+            <div id="corpo"></div>
+        </div>
+    </div>
+    <!-- fim modal -->
+    <script src="script.js"></script>
+</body>
+</html>
